@@ -461,15 +461,15 @@ function render_search_result_list() {
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
-	     文件
+	     名稱
 	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
-	     修改时间
+	     修改時間
 	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
-	     大小
+	     檔案大小
 	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
 	    </div> 
 	    </li> 
@@ -664,7 +664,7 @@ function onSearchResultItemClick(a_ele) {
     dialog.close();
     dialog = mdui.dialog({
       title: '<i class="mdui-icon material-icons">&#xe811;</i>無法讀取或找不到目標',
-      content: 'o(╯□╰)o 可能是因為硬碟中並不存在此項！也可能因為没有把【與我共享】的文件添加到個人硬碟中！',
+      content: '可能因為硬碟中並不存在此項！',
       history: false,
       modal: true,
       closeOnEsc: true,
