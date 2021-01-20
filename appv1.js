@@ -26,7 +26,7 @@ function init() {
   var html = `
 <header class="nexmoe-nav">
 	<div class="navSize">
-			<a href="/"><img class="avatar" src="https://images2.imgbox.com/51/1c/rjmZV8S1_o.png"/></a>
+			<a href="/"><img class="avatar" src="https://cdn.jsdelivr.net/gh/010203le/73vg.co/titlev2.png"/></a>
 			<div class="nav_menu">
 				<ul class="menu_ul">
 					<li class="menu_li"><a href="https://discord.gg/jfYqMXAySN" target="_blank">DISCORD</a></li>
