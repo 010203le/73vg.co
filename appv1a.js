@@ -331,7 +331,7 @@ function list(path) {
     successResultCallback,
     function (path) {
       $('#spinner').remove();
-      var pass = prompt("目录加密, 请输入密码", "");
+      var pass = prompt("目錄加密, 請輸入密碼", "");
       localStorage.setItem('password' + path, pass);
       if (pass != null && pass != "") {
         list(path);
@@ -478,7 +478,7 @@ function render_search_result_list() {
 	 <div class="mdui-row"> 
 	  <ul id="list" class="mdui-list"> 
 	  </ul> 
-	  <div id="count" class="mdui-hidden mdui-center mdui-text-center mdui-m-b-3 mdui-typo-subheading mdui-text-color-blue-grey-500">共 <span class="number"></span> 项</div>
+	  <div id="count" class="mdui-hidden mdui-center mdui-text-center mdui-m-b-3 mdui-typo-subheading mdui-text-color-blue-grey-500">共 <span class="number"></span> 項</div>
 	 </div>
 	 <div id="readme_md" class="mdui-typo" style="display:none; padding: 20px 0;"></div>
 	`;
@@ -627,7 +627,7 @@ function onSearchResultItemClick(a_ele) {
   var cur = window.current_drive_order;
   var dialog = mdui.dialog({
     title: '',
-    content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">正在获取目标路径...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
+    content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">正在讀取目標路徑...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
     // content: '<div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
     history: false,
     modal: true,
@@ -641,18 +641,18 @@ function onSearchResultItemClick(a_ele) {
       dialog.close();
       var href = `/${cur}:${data}${can_preview ? '?a=view' : ''}`;
       dialog = mdui.dialog({
-        title: '<i class="mdui-icon material-icons">&#xe815;</i>目标路径',
+        title: '<i class="mdui-icon material-icons">&#xe815;</i>目標路徑',
         content: `<a href="${href}">${data}</a>`,
         history: false,
         modal: true,
         closeOnEsc: true,
         buttons: [
           {
-            text: '打开', onClick: function () {
+            text: '打開', onClick: function () {
               window.location.href = href
             }
           }, {
-            text: '新标签中打开', onClick: function () {
+            text: '新頁籤中打開', onClick: function () {
               window.open(href)
             }
           }
@@ -663,8 +663,8 @@ function onSearchResultItemClick(a_ele) {
     }
     dialog.close();
     dialog = mdui.dialog({
-      title: '<i class="mdui-icon material-icons">&#xe811;</i>获取目标路径失败',
-      content: 'o(╯□╰)o 可能是因为该盘中并不存在此项！也可能因为没有把【与我共享】的文件添加到个人云端硬盘中！',
+      title: '<i class="mdui-icon material-icons">&#xe811;</i>無法讀取或找不到目標',
+      content: 'o(╯□╰)o 可能是因為硬碟中並不存在此項！也可能因為没有把【與我共享】的文件添加到個人硬碟中！',
       history: false,
       modal: true,
       closeOnEsc: true,
@@ -738,7 +738,7 @@ function file_code(path) {
 <pre id="editor" ></pre>
 </div>
 <div class="mdui-textfield">
-	<label class="mdui-textfield-label">下载地址</label>
+	<label class="mdui-textfield-label">下載地址</label>
 	<input class="mdui-textfield-input" type="text" value="${href}"/>
 </div>
 <a href="${href}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
