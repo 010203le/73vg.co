@@ -30,7 +30,6 @@ function init() {
 			<div class="nav_menu">
 				<ul class="menu_ul">
 					<li class="menu_li"><a href="https://discord.gg/jfYqMXAySN" target="_blank">DISCORD</a></li>
-					<li class="menu_li"><a href="https://google.com" target="_blank">窩不知道</a></li>
 				</ul>
 				<div class="nav_icon" ></div>
 			</div>
@@ -229,15 +228,15 @@ function list(path) {
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
-	     文件
+	     檔案名稱
 	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
-	     修改时间
+	     修改時間
 	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
-	     大小
+	     檔案大小
 	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
 	    </div> 
 	    </li> 
