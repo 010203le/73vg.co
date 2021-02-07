@@ -9,8 +9,6 @@
 document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.3/css/mdui_v2.min.css">');
 document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.6/css/nexmoe_v2.min.css">');
 document.write('<script src="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.3/js/mdui.min.js"></script>');
-document.write('<script src="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.5/js/flv.min.js"></script>');
-document.write('<script src="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.5/js/DPlayer.min.js"></script>');
 // markdown支持
 document.write('<script src="//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.3/js/markdown-it.min.js"></script>');
 document.write('<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container{width:100%!important;margin:0}}</style>');
@@ -389,11 +387,6 @@ function append_files_to_list(path, files) {
         });
       }
       var ext = p.split('.').pop().toLowerCase();
-      if ("|c8763|".indexOf(`|${ext}|`) >= 0) {
-        targetFiles.push(filepath);
-        p += "?a=view";
-        c += " view";
-      }
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
@@ -405,22 +398,6 @@ function append_files_to_list(path, files) {
 	      </li>`;
     }
   }
-
-  /*let targetObj = {};
-  targetFiles.forEach((myFilepath, myIndex) => {
-      if (!targetObj[myFilepath]) {
-          targetObj[myFilepath] = {
-              filepath: myFilepath,
-              prev: myIndex === 0 ? null : targetFiles[myIndex - 1],
-              next: myIndex === targetFiles.length - 1 ? null : targetFiles[myIndex + 1],
-          }
-      }
-  })
-  // console.log(targetObj)
-  if (Object.keys(targetObj).length) {
-      localStorage.setItem(path, JSON.stringify(targetObj));
-      // console.log(path)
-  }*/
 
   if (targetFiles.length > 0) {
     let old = localStorage.getItem(path);
@@ -594,9 +571,6 @@ function append_search_result_to_list(files) {
     } else {
       var c = "file";
       var ext = item.name.split('.').pop().toLowerCase();
-      if ("|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|".indexOf(`|${ext}|`) >= 0) {
-        c += " view";
-      }
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a id="${item['id']}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
@@ -785,4 +759,3 @@ $(function () {
 
   render(path);
 });
-//# sourceMappingURL=/sm/6e384b7c2f5d0aa9c6028ac483ff0c0b2e4dc5254b764e5022644e6b83ba4474.map
