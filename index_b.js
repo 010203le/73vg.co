@@ -60,7 +60,6 @@ const authConfig = {
 const uiConfig = {
   // 此版本只支持 material
   "theme": "material", // DO NOT set it to classic
-  "dark_mode": false,
   "main_color": "blue-grey",
   "accent_color": "blue",
   /*"main_color": "light-green",
