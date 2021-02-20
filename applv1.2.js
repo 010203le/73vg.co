@@ -558,6 +558,13 @@ function append_search_result_to_list(files) {
 	            </a>
 	        </li>`;
     } else {
+      switch(item.name) { // 隱藏項目
+				case 'README.md':
+					continue
+				case 'HEAD.md':
+					continue
+			}
+
       var c = "file";
       var ext = item.name.split('.').pop().toLowerCase();
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a id="${item['id']}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
