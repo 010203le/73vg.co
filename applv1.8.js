@@ -364,14 +364,14 @@ function append_files_to_list(path, files) {
       if (is_lastpage_loaded && item.name == "README.md") {
         get_file(p, item, function (data) {
           markdown("#readme_md", data);
-          continue
         });
+        continue
       }
       if (item.name == "HEAD.md") {
         get_file(p, item, function (data) {
           markdown("#head_md", data);
-          continue
         });
+        continue
       }
       var ext = p.split('.').pop().toLowerCase();
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
