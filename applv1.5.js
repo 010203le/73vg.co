@@ -6,10 +6,6 @@
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
 
-// add custome theme and darkmode
-if (UI.dark_mode) {
-  document.write(`<style>* {box-sizing: border-box}body{color:rgba(255,255,255,.87);background-color:#333232}.mdui-theme-primary-${UI.main_color} .mdui-color-theme{background-color:#232427!important}</style>`);
-}
 
 // 初始化页面，并载入必要资源
 function init() {
