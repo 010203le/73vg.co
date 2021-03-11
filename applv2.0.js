@@ -362,7 +362,7 @@ function append_files_to_list(path, files) {
       var c = "file";
 
       // 渲染head.md
-			get_file('/0:/head.md', item, (data) => {
+			get_file('/0:/HEAD.md', item, (data) => {
 				markdown('#head_md', data)
 			})
 
