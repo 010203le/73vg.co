@@ -51,7 +51,7 @@ const authConfig = {
    * 如果在全局认证的基础上，仍需要给某些目录单独进行 .password 文件内的密码验证的话，将此选项设置为 true;
    * 【注意】如果开启了 .password 文件密码验证，每次列目录都会额外增加查询目录内 .password 文件是否存在的开销。
    */
-  "enable_password_file_verify": false
+  "enable_password_file_verify": true
 };
 
 /**
@@ -60,6 +60,7 @@ const authConfig = {
 const uiConfig = {
   // 此版本只支持 material
   "theme": "material", // DO NOT set it to classic
+  "dark_mode": false,
   "main_color": "blue-grey",
   "accent_color": "blue",
   /*"main_color": "light-green",
@@ -115,13 +116,14 @@ function html(current_drive_order = 0, model = {}) {
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/010203le/73vg.co/css/mdui.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/010203le/73vg.co/css/73vg.min.css">
   <style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container{width:100%!important;margin:0}}</style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' integrity='sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==' crossorigin='anonymous'></script>
   <script>
     window.drive_names = JSON.parse('${JSON.stringify(authConfig.roots.map(it => it.name))}');
     window.MODEL = JSON.parse('${JSON.stringify(model)}');
     window.current_drive_order = ${current_drive_order};
     window.UI = JSON.parse('${JSON.stringify(uiConfig)}');
   </script>
-  <script src="//cdn.jsdelivr.net/gh/010203le/73vg.co/applv1.1.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/010203le/73vg.co/applv2.0.js"></script>
   <script src="//cdn.jsdelivr.net/gh/010203le/73vg.co/js/mdui.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/010203le/73vg.co/js/markdown-it.min.js"></script>
 </head>
@@ -843,4 +845,3 @@ String.prototype.trim = function (char) {
   }
   return this.replace(/^\s+|\s+$/g, '');
 };
-//# sourceMappingURL=/sm/66a94fc3ec45fb7c78cc4edadd8e448d9b1c735f8c0cebcf7bbb4b40b9caacde.map
